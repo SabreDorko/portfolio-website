@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog — Jay Walpole's Portfolio">
+    <meta name="author" content="Jay Walpole">
+
+    <title>Blog | Jay Walpole</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Jay Walpole">
+    <link rel="manifest" href="favicons/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/ad98714edd.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+    <div id="site-bg">
+      <div class="background"></div>
+      <canvas id="rain"></canvas>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+      <nav>
+        <a class="nav-logo" href="index.html" style="text-decoration:none">jaysd<span class="logo-dim">.dev</span></a>
+        <ul>
+          <i class="fa-solid fa-times menu-close" onclick="closeMenu()"></i>
+          <li><a href="index.html#hero">home</a></li>
+          <li><a href="index.html#about">about</a></li>
+          <li><a href="index.html#projects">projects</a></li>
+          <li><a href="index.html#blog">blog</a></li>
+          <li><a href="index.html#contact">contact</a></li>
+        </ul>
+        <i class="fa-solid fa-bars menu-toggle" onclick="openMenu()"></i>
+      </nav>
+    </header>
+
+    <main>
+      <section class="blog-page">
+        <div class="container">
+          <a href="index.html#blog" class="blog-back"><i class="fa-solid fa-arrow-left"></i> Back to Blog</a>
+          <div class="blog-header">
+            <h1 id="blog-title"></h1>
+            <div class="blog-meta">
+              <span class="blog-card-date" id="blog-date"></span>
+            </div>
+            <div class="blog-card-tags" id="blog-tags"></div>
+          </div>
+          <div class="blog-cover" id="blog-cover" style="display:none"></div>
+          <div class="blog-body" id="blog-body"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Copyright &copy; 2026 Jay Walpole. All rights reserved.</p>
+    </footer>
+
+    <script src="rain-background.js"></script>
+    <script src="blog-page.js"></script>
+
+    <!-- Mobile Navigation -->
+    <script>
+      function openMenu() {
+        document.querySelector("nav ul").classList.add("open");
+      }
+
+      function closeMenu() {
+        document.querySelector("nav ul").classList.remove("open");
+      }
+    </script>
+
+  </body>
+
+</html>

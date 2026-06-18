@@ -1,0 +1,41 @@
+<h2>Introduction</h2>
+
+<p>You shipped. People are playing. And now the reports are coming in.</p>
+
+<p>Someone posted a crash on your itch.io page. Three people filed GitHub issues about the same visual glitch, worded completely differently. Reports are flooding your #bug-reports channel on Discord. And you found two bugs yourself during a playtest this morning that you haven't written down anywhere yet.</p>
+
+<p>Somewhere in that pile is something critical. But it's buried under thousands of other reports and you might not even know where to begin.</p>
+
+<h2>The Part Nobody Talks About</h2>
+
+<p>Big studios have QA teams. They have project managers, ticketing systems, and people whose entire job is to sort incoming reports before a developer ever sees them.</p>
+
+<p>A two-person indie studio has four browser tabs open and a mounting sense of dread.</p>
+
+<p>The issue isn't that players don't report bugs — they do, enthusiastically, across every platform they happen to be on when the bug hits them. The issue is that those reports are scattered, noisy, and unstructured. Before you can fix anything, you have to figure out what you're even looking at. Is this a duplicate of something you already know about? Is it critical or cosmetic? Is it just spam meant to overwhelm you and waste your time?</p>
+
+<p>That invisible, tedious work is a small bolt in the pipeline for large companies, a task to be delegated. For small teams and solo devs? It's a sinkhole threatening to swallow whatever little time and resources they have.</p>
+
+<h2>What I'm Building</h2>
+
+<p>Patchy is a bug triage tool built for indie developers and small studios. The core idea is to pool reports from wherever they come in — GitHub Issues, itch.io, Discord, direct developer notes — and process them in one place, so your inbox isn't the triage system.</p>
+
+<p>Every incoming report gets scored automatically across three dimensions:</p>
+
+<ul>
+  <li><strong>Category</strong> — crash, visual, audio, gameplay, performance, UI?</li>
+  <li><strong>Severity</strong> — does the language suggest something critical or cosmetic?</li>
+  <li><strong>Uniqueness</strong> — is this a duplicate of something already logged?</li>
+</ul>
+
+<p>Based on those scores, reports get routed accordingly. High-confidence, clear-cut cases are handled by the algorithm. Ambiguous ones get flagged for review. The goal is that when you open your dashboard, you're looking at an already-sorted pile — duplicates collapsed, spam discarded, real issues ranked by severity and ready to act on.</p>
+
+<p>Patchy isn't meant to replace human judgment. A QA team using it still makes the calls — it just handles the mechanical sorting that doesn't need a human. For developers without a QA team, it provides some of that structure automatically, while still surfacing the reports that genuinely need eyes on them.</p>
+
+<h2>Where It Stands</h2>
+
+<p>Patchy is currently a working prototype. Discord is the first integration — it's where a lot of indie dev communities already live, and it made for a practical starting point. But the intent has always been broader than that: one dashboard, reports from anywhere.</p>
+
+<p>I'm in the early stages of talking to real developers to understand where the friction actually is. If bug triage is a pain point for your team — or if you're a solo dev drowning in itch.io comments — I'd love to hear how you're handling it today.</p>
+
+<p><em>Patchy is in early development. Follow along for future updates.</em></p>

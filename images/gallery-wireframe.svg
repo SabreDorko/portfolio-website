@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#141a20"/>
+  <g stroke="#9edb8d66" fill="none" stroke-width="4">
+    <rect x="120" y="120" width="1040" height="480" rx="20"/>
+    <rect x="180" y="180" width="360" height="300" rx="10"/>
+    <rect x="580" y="180" width="520" height="30" rx="8"/>
+    <rect x="580" y="240" width="520" height="20" rx="8"/>
+    <rect x="580" y="280" width="420" height="20" rx="8"/>
+  </g>
+  <text x="180" y="560" fill="#b7f3a3" font-size="48" font-family="JetBrains Mono, monospace">Wireframe Placeholder</text>
+</svg>

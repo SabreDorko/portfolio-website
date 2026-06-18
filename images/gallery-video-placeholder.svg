@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0f1320"/>
+  <rect x="140" y="100" width="1000" height="520" rx="18" fill="#ffffff0f" stroke="#ffffff2b"/>
+  <circle cx="640" cy="360" r="74" fill="#ff478277"/>
+  <polygon points="620,325 620,395 685,360" fill="#ffffff"/>
+  <text x="390" y="520" fill="#ffd1e1" font-size="42" font-family="JetBrains Mono, monospace">Video Placeholder</text>
+  <text x="320" y="566" fill="#9ab0d5" font-size="28" font-family="JetBrains Mono, monospace">Set media.type to video and add media.src</text>
+</svg>

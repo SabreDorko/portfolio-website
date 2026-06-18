@@ -1,0 +1,22 @@
+<p>After having uploaded the first installer for keyQuack, I was made aware of two major issues:</p>
+
+<ul>
+  <li>Progress towards dives does not save between sessions, making it frustrating to get close to a dive and then close out the program only to start from scratch</li>
+  <li>Dives take a long time to progress</li>
+  <li>Users would like an hours field in the timer setup</li>
+</ul>
+
+<p>So, I've made some adjustments.</p>
+
+<h2>Changes</h2>
+
+<ul>
+  <li>Previous installer has been replaced with a simple .zip file</li>
+  <li>Stats now update once every second</li>
+  <li>AFK timer is now more accurate, starting as soon as you stop typing and adjusting stats accordingly</li>
+  <li>Total Active Time now shows seconds as well</li>
+  <li>Fixed the select sound playing on startup if user had a completed task in their tasks list</li>
+  <li>Cost to fill the gauge for being able to dive has been drastically reduced from the original 2,400 keystrokes to 750</li>
+  <li>Gauge will now save progress every few seconds, so closing the program won't set you back to 0</li>
+  <li>Timer has been converted from a spinbox to text fields and an Hours tab has been added</li>
+</ul>

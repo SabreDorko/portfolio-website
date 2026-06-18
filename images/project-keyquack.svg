@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#102649"/>
+      <stop offset="100%" stop-color="#0a111f"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <circle cx="280" cy="210" r="140" fill="#5dd4f033"/>
+  <circle cx="980" cy="520" r="190" fill="#ff478226"/>
+  <text x="90" y="360" fill="#d9f9ff" font-size="84" font-family="JetBrains Mono, monospace">keyQuack</text>
+  <text x="90" y="420" fill="#7abed0" font-size="34" font-family="JetBrains Mono, monospace">Desktop Pet + Activity Rewards</text>
+</svg>

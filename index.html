@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Jay Walpole — Software Engineer and Game Developer graduating May 2027.">
+    <meta name="author" content="Jay Walpole">
+
+    <title>Jay Walpole | Portfolio</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicons/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="favicons/favicon.svg">
+    <link rel="shortcut icon" href="favicons/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-title" content="Jay Walpole">
+    <link rel="manifest" href="favicons/site.webmanifest">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/ad98714edd.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+
+  <body>
+    <div id="site-bg">
+      <div class="background"></div>
+      <canvas id="rain"></canvas>
+    </div>
+
+    <!-- Navigation Header -->
+    <header>
+      <nav>
+        <div class="nav-logo">jaysd<span class="logo-dim">.dev</span></div>
+        <ul>
+          <i class="fa-solid fa-times menu-close" onclick="closeMenu()"></i>
+          <li><a href="#hero">home</a></li>
+          <li><a href="#about">about</a></li>
+          <li><a href="#projects">projects</a></li>
+          <li><a href="#blog">blog</a></li>
+          <li><a href="#contact">contact</a></li>
+        </ul>
+        <i class="fa-solid fa-bars menu-toggle" onclick="openMenu()"></i>
+      </nav>
+    </header>
+
+    <main>
+
+      <!-- Hero Section -->
+      <section id="hero">
+        <div class="hero-vignette"></div>
+        <div class="hero-content">
+          <p style="color: rgba(93, 212, 240, 0.8);">Software Engineer</p>
+          <h1>Janessa <span style="font-weight:bold">Walpole</span> <span style="color: rgba(255, 255, 255, 0.6);">//SabreDorko</span></h1>
+          <br><hr><br>
+          <p style="color: rgba(255, 255, 255, 0.8); font-size:30px">>Striving to create engaging and memorable <br>experiences through software.<span class="cursor"></span></p>
+        </div>
+        <a href="#about" class="scroll-hint" id="scroll-hint">
+          <i class="fa-solid fa-chevron-down"></i>
+        </a>
+      </section>
+
+      <!-- About Me-->
+      <section id="about">
+        <div class="container">
+          <div class="row">
+            <div class="about-col-1">
+              <!-- Placeholder image, replace later-->
+              <img src="images/user.jpg">
+            </div>
+            <div class="about-col-2">
+              <h1 class="sub-title">About Me</h1>
+              <p>Hi, my name is Jay. I'm a software engineering student with an interest in game design who will be graduating in May of 2027 with my Bachelor of Computer Science degree with a concentration in Software Engineering.<br><br>I thrive in creative spaces where I can collaborate on crafting memorable, engaging experiences for others.</p>
+
+              <div class="tab-titles">
+                <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                <p class="tab-links" onclick="opentab('education')">Education</p>
+              </div>
+              <div class="tab-contents active-tab" id="skills">
+                <ul>
+                  <li><span>JavaScript</span><br>Utilizing JavaScript for web development and interactive applications.</li>
+                  <li><span>Python</span><br>Utilizing Python for small applications and scripting.</li>
+                  <li><span>C#</span><br>Developing Unity games and systems using C#.</li>
+                  <li><span>Github</span><br>Utilizing Github for version control and collaboration on projects.</li>
+                  <li><span>Godot</span><br>Developing games and applications using the Godot engine.</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="experience">
+                <ul>
+                  <li><span>February 2024-Present</span><br>Student Assistant for Austin Peay State University's Computer Science Department</li>
+                  <li><span>February 2024-Present</span><br>Student Assistant for Austin Peay State University's Computer Science Department</li>
+                  <li><span>June 2026-August 2026</span><br>Cloud & AI Engineering Intern at Altivum Inc.</li>
+                </ul>
+              </div>
+              <div class="tab-contents" id="education">
+                <ul>
+                  <li><span>May 2027</span><br>Bachelor of Science in Computer Science (Software Engineering), Austin Peay State University</li>
+                  <li><span>May 2026</span><br>Associate of Science in University Studies, Austin Peay State University</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section id="projects">
+        <div class="container">
+          <h1 class="sub-title" style="text-align:center">>Projects</h1>
+          <div class="projects-carousel" aria-label="Projects carousel">
+            <button class="projects-arrow" id="projects-prev" type="button" aria-label="Previous projects">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="projects-viewport">
+              <div class="projects-track" id="projects-track"></div>
+            </div>
+            <button class="projects-arrow" id="projects-next" type="button" aria-label="Next projects">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="projects-pagination" id="projects-pagination" aria-hidden="true"></div>
+        </div>
+      </section>
+
+      <div class="project-modal" id="project-modal" aria-hidden="true">
+        <div class="project-modal-overlay" id="project-modal-overlay"></div>
+        <div class="project-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="project-modal-title">
+          <button class="project-modal-close" id="project-modal-close" type="button" aria-label="Close project details">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <div class="project-modal-main" id="project-modal-main"></div>
+
+          <div class="project-gallery" id="project-gallery">
+            <button class="gallery-arrow" id="gallery-prev" type="button" aria-label="Previous media">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="gallery-viewport">
+              <div class="gallery-track" id="gallery-track"></div>
+            </div>
+            <button class="gallery-arrow" id="gallery-next" type="button" aria-label="Next media">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="gallery-pagination" id="gallery-pagination"></div>
+          <p class="gallery-caption" id="gallery-caption"></p>
+        </div>
+      </div>
+
+      <!-- Blog -->
+      <section id="blog">
+        <div class="container">
+          <h1 class="sub-title" style="text-align:center">Blog.md</h1>
+          <div class="blog-search">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="blog-search" placeholder="Search by title or tag..." autocomplete="off">
+          </div>
+          <div class="blog-grid" id="blog-grid"></div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container">
+          <div class="row">
+            <div class="contact-left">
+              <h1 class="sub-title">Contact Me</h1>
+              <p><i class="fa-solid fa-paper-plane"></i>jay.sabredorko@gmail.com</p>
+              <p><i class="fa-solid fa-at"></i>SabreDorko</p>
+              <div class="social-icons">
+                <a href="https://github.com/SabreDorko"><i class="fa-brands fa-github"></i></a>
+                <a href="https://sabredorko.itch.io/"><i class="fa-brands fa-itch-io"></i></a>
+                <a href="https://www.linkedin.com/in/janessa-walpole-772138294/"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="mailto:jay.sabredorko@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+              </div>
+              <a href="JanessaWalpole-Resume.pdf" download class="btn altbtn">Download CV</a>
+            </div>
+            <div class="contact-right">
+              <form id="contact-form">
+                <input type="text" name="Name" placeholder="Your Name" required>
+                <input type="email" name="Email" placeholder="Your Email" required>
+                <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn altbtn">Send Message</button>
+              </form>
+              <span id="msg"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">
+      <p>Copyright &copy; 2026 Jay Walpole. All rights reserved.</p>
+    </footer>
+
+    <script src="rain-background.js"></script>
+    <script src="projects-carousel.js"></script>
+    <script src="blog.js"></script>
+
+    <!-- Reactive blog section borders -->
+    <script>
+      (function () {
+        var blobs = [
+          { cx: 0.28, cy: 0.30, rx: 0.385, ry: 0.42, r: 93, g: 212, b: 240, a: 0.22 },
+          { cx: 0.72, cy: 0.18, rx: 0.315, ry: 0.385, r: 255, g: 71, b: 130, a: 0.18 },
+          { cx: 0.55, cy: 0.70, rx: 0.28, ry: 0.28, r: 0, g: 180, b: 140, a: 0.09 }
+        ];
+
+        function sampleAt(x, y) {
+          var r = 0, g = 0, b = 0, weight = 0;
+          for (var i = 0; i < blobs.length; i++) {
+            var blob = blobs[i];
+            var dx = (x - blob.cx) / blob.rx;
+            var dy = (y - blob.cy) / blob.ry;
+            var dist = Math.sqrt(dx * dx + dy * dy);
+            var intensity = Math.max(0, 1 - dist);
+            var w = blob.a * intensity;
+            r += blob.r * w;
+            g += blob.g * w;
+            b += blob.b * w;
+            weight += w;
+          }
+          if (weight < 0.001) return 'rgba(93,212,240,0)';
+          r = Math.round(r / weight);
+          g = Math.round(g / weight);
+          b = Math.round(b / weight);
+          var a = Math.min(weight * 6, 0.35);
+          return 'rgba(' + r + ',' + g + ',' + b + ',' + a.toFixed(3) + ')';
+        }
+
+        function buildGradient(y) {
+          var stops = [0, 0.15, 0.3, 0.5, 0.7, 0.85, 1];
+          var parts = [];
+          for (var i = 0; i < stops.length; i++) {
+            parts.push(sampleAt(stops[i], y) + ' ' + (stops[i] * 100) + '%');
+          }
+          return 'linear-gradient(to right, ' + parts.join(', ') + ')';
+        }
+
+        var aboutSection = document.getElementById('about');
+        var blogSection = document.getElementById('blog');
+        var ticking = false;
+
+        function update() {
+          var vh = window.innerHeight;
+          var aboutRect = aboutSection.getBoundingClientRect();
+          aboutSection.style.setProperty('--about-border-top', buildGradient(aboutRect.top / vh));
+          aboutSection.style.setProperty('--about-border-bottom', buildGradient(aboutRect.bottom / vh));
+          var blogRect = blogSection.getBoundingClientRect();
+          blogSection.style.setProperty('--blog-border-top', buildGradient(blogRect.top / vh));
+          blogSection.style.setProperty('--blog-border-bottom', buildGradient(blogRect.bottom / vh));
+          ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(update);
+          }
+        }, { passive: true });
+
+        update();
+      })();
+    </script>
+
+    <!-- Scroll hint dismiss -->
+    <script>
+      (function () {
+        var hint = document.getElementById('scroll-hint');
+        window.addEventListener('scroll', function onScroll() {
+          if (window.scrollY > 50) {
+            hint.classList.add('hidden');
+            window.removeEventListener('scroll', onScroll);
+          }
+        }, { passive: true });
+      })();
+    </script>
+
+    <!-- Tabbed Content -->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for(tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        document.getElementById(tabname).classList.add("active-tab");
+        event.currentTarget.classList.add("active-link");
+      }
+    </script>
+
+    <!-- Mobile Navigation -->
+    <script>
+      function openMenu() {
+        document.querySelector("nav ul").classList.add("open");
+      }
+
+      function closeMenu() {
+        document.querySelector("nav ul").classList.remove("open");
+      }
+    </script>
+
+    <!-- Contact Form Information Send to Sheets -->
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbwakYNlJWeED1O8W4yWqMjrODYxWdiEcpH8Fp2SWyi3ea4pIwT5X57Lp1NnE906Koq8HA/exec'
+      const form = document.forms['contact-form']
+      const msg = document.getElementById("msg")
+
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, {
+          method: 'POST',
+          body: new FormData(form),
+          mode: 'no-cors'
+        })
+          .then(() => {
+            msg.innerHTML = "Message sent successfully. Thank you!"
+            setTimeout(function() {
+              msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+          })
+          .catch(error => {
+            msg.innerHTML = "Unable to send message right now. Please try again."
+            console.error('Contact form error:', error)
+          })
+      })
+    </script>
+
+  </body>
+
+</html>
