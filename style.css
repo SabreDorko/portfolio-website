@@ -1185,26 +1185,28 @@ form .altbtn {
         justify-self: center;
     }
 
-    .projects-carousel .projects-arrow {
-        grid-row: 2;
-    }
-
-    #projects-prev {
-        justify-self: end;
-        grid-column: 1;
-    }
-
-    #projects-next {
-        justify-self: start;
-        grid-column: 1;
-    }
-
     .projects-carousel {
         grid-template-columns: 1fr 1fr;
     }
 
     .projects-viewport {
         grid-column: 1 / -1;
+    }
+
+    .projects-carousel .projects-arrow {
+        grid-row: 2;
+    }
+
+    #projects-prev {
+        grid-column: 1;
+        justify-self: end;
+        margin-right: 8px;
+    }
+
+    #projects-next {
+        grid-column: 2;
+        justify-self: start;
+        margin-left: 8px;
     }
 
     .blog-header h1 {
