@@ -1174,7 +1174,7 @@ form .altbtn {
     }
 
     .projects-viewport {
-        overflow: visible;
+        overflow: hidden;
         --projects-rotate-clip: 20px;
         --projects-rotate-top: 24px;
         --projects-rotate-bottom: 30px;
@@ -1223,7 +1223,7 @@ form .altbtn {
     }
 
     .projects-viewport {
-        overflow: visible;
+        overflow: hidden;
         --projects-rotate-clip: 16px;
         --projects-rotate-top: 20px;
         --projects-rotate-bottom: 26px;

@@ -730,6 +730,35 @@ function goToPrevGallery() {
   galleryTrack.addEventListener('transitionend', onTransitionEnd);
 }
 
+let projectSwipeStartX = 0;
+let projectSwipeStartY = 0;
+let isProjectTouchActive = false;
+const projectSwipeThreshold = 48;
+
+function handleProjectTouchStart(event) {
+  if (isProjectAnimating) return;
+  const touch = event.changedTouches[0];
+  if (!touch) return;
+  isProjectTouchActive = true;
+  projectSwipeStartX = touch.clientX;
+  projectSwipeStartY = touch.clientY;
+}
+
+function handleProjectTouchEnd(event) {
+  if (!isProjectTouchActive) return;
+  const touch = event.changedTouches[0];
+  if (!touch) { isProjectTouchActive = false; return; }
+  const deltaX = touch.clientX - projectSwipeStartX;
+  const deltaY = touch.clientY - projectSwipeStartY;
+  isProjectTouchActive = false;
+  if (Math.abs(deltaX) < projectSwipeThreshold) return;
+  if (Math.abs(deltaX) <= Math.abs(deltaY)) return;
+  if (deltaX < 0) { goToNextProject(); } else { goToPrevProject(); }
+}
+
+projectsViewport.addEventListener('touchstart', handleProjectTouchStart, { passive: true });
+projectsViewport.addEventListener('touchend', handleProjectTouchEnd, { passive: true });
+
 projectsPrev.addEventListener('click', goToPrevProject);
 projectsNext.addEventListener('click', goToNextProject);
 galleryPrev.addEventListener('click', goToPrevGallery);
