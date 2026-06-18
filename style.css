@@ -1273,11 +1273,28 @@ form .altbtn {
     }
 
     .project-gallery {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
-    .gallery-arrow {
-        justify-self: center;
+    .gallery-viewport {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .project-gallery .gallery-arrow {
+        grid-row: 2;
+    }
+
+    #gallery-prev {
+        grid-column: 1;
+        justify-self: end;
+        margin-right: 8px;
+    }
+
+    #gallery-next {
+        grid-column: 2;
+        justify-self: start;
+        margin-left: 8px;
     }
 
     .blog-page {
