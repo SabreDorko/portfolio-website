@@ -4,7 +4,7 @@ const projects = [
     shortDescription:
       'A desktop pet built in Godot that tracks your keyboard activity and rewards active use via a fishing minigame.',
     fullDescription:
-      'keyQuack is a productivity-inspired desktop companion that tracks keyboard activity and turns momentum into playful progress. The project blends light gamification with idle-pet charm and includes a fishing minigame loop for rewards.',
+      'keyQuack is a desktop pet that tracks keyboard activity and rewards productivity. The project encourages progress via a fishing minigame, encouraging active use when work gets boring.',
     tech: ['Godot', 'GDScript', 'Python', '2D Assets'],
     links: [
       { label: 'View on Itch.io', url: 'https://sabredorko.itch.io/keyquack' }
@@ -26,7 +26,7 @@ const projects = [
   {
     title: 'Bond Builder',
     shortDescription:
-      'A work-in-progress sandbox game built in Unity where players can build molecules and interact with atoms.',
+      'A work-in-progress sandbox game built in Unity where players can build molecules from individual atoms.',
     fullDescription:
       'Bond Builder is a 3D sandbox that allows players to build molecules from individual atoms. It supports electron display, bond types, and algorithmic molecule name generation.',
     tech: ['Unity', 'C#', 'Simulation Systems'],
@@ -55,7 +55,7 @@ const projects = [
     shortDescription:
       'Using the Owlbear API, I have developed two extensions to manage character sheets for different tabletop RPG systems.',
     fullDescription:
-      'These Owlbear extensions focus on reducing table friction by centralizing sheet access and quick edits in-session. The tools were designed for lightweight workflows so players can stay in the game flow instead of switching contexts.',
+      'These Owlbear extensions provide character sheet managers for two niche TTRPGs. Being built on the Owlbear API allows players to access and edit their character sheets without needing to toggle between multiple apps or browser tabs.',
     tech: ['HTML', 'Owlbear API', 'Vite', 'JavaScript'],
     links: [
       { label: 'Will of The Cursed Extension', url: 'https://github.com/SabreDorko/JJK-WoCS-Owlbear-Sheets' },
@@ -75,7 +75,7 @@ const projects = [
     shortDescription:
       'A bug triage companion for indie developers that pools reports from GitHub, itch.io, and Discord into one sorted dashboard.',
     fullDescription:
-      'Patchy is a bug triage tool built for indie developers and small studios. It pools reports from wherever they come in — GitHub Issues, itch.io, Discord, direct developer notes — and processes them in one place. Every incoming report gets scored automatically by category, severity, and uniqueness, then routed accordingly so your inbox isn\'t the triage system.',
+      'Patchy is a bug triage tool built for indie developers and small studios. It pools reports from wherever they come in — GitHub Issues, itch.io, Discord, direct developer notes — and processes them in one place. Every incoming report gets scored algorithmically by category, severity, and uniqueness, then routed accordingly so your inbox isn\'t the triage system.',
     tech: ['Python', 'Discord API', 'NLP'],
     links: [
       { label: 'Read the Post', url: 'blog.html?slug=bug-report-compilation-triage' }
@@ -92,7 +92,7 @@ const projects = [
   {
     title: 'Portfolio Website',
     shortDescription:
-      'A custom portfolio site with animated atmosphere, responsive layouts, and interactive project storytelling.',
+      'The website you\'re reading right now! Built to showcase my work with my own personal touch and style.',
     fullDescription:
       'This website is built to showcase work with strong visual identity and smooth interactions. The projects module supports card-level browsing and a media-rich modal for deeper case-study style walkthroughs.',
     tech: ['HTML', 'CSS', 'JavaScript'],
