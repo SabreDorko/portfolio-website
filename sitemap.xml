@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://jaysd.dev/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://jaysd.dev/blog.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://jaysd.dev/blog/introducing-keyquack.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jaysd.dev/blog/keyquack-first-update.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://jaysd.dev/blog/bug-report-compilation-triage.html</loc>
+    <priority>0.6</priority>
+  </url>
+</urlset>
