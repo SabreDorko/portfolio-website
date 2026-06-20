@@ -29,6 +29,8 @@
 
     <link rel="stylesheet" href="style.css">
 
+    <script src="https://www.google.com/recaptcha/api.js?render=6Le7VCotAAAAAJtIG1YWePLqQAEcbKhhDtfKotcQ"></script>
+
   </head>
 
   <body>
@@ -187,6 +189,7 @@
                 <input type="text" name="Name" placeholder="Your Name" required>
                 <input type="email" name="Email" placeholder="Your Email" required>
                 <textarea name="Message" rows="6" placeholder="Your Message" required></textarea>
+                <input type="text" name="mobile_number" autocomplete="off" tabindex="-1" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0;">
                 <button type="submit" class="btn altbtn">Send Message</button>
               </form>
               <span id="msg"></span>
@@ -314,28 +317,69 @@
 
     <!-- Contact Form Information Send to Sheets -->
     <script>
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwakYNlJWeED1O8W4yWqMjrODYxWdiEcpH8Fp2SWyi3ea4pIwT5X57Lp1NnE906Koq8HA/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycby5WyEOoMeaznmwuV0YzN6XJ86kWqdJAQHCEN0Kroj2g558dn_cgDpRxhQ_xojfYmvWIQ/exec'
       const form = document.forms['contact-form']
       const msg = document.getElementById("msg")
+      const submitBtn = form.querySelector('button[type="submit"]')
+      let lastSubmitTime = 0
 
       form.addEventListener('submit', e => {
         e.preventDefault()
-        fetch(scriptURL, {
-          method: 'POST',
-          body: new FormData(form),
-          mode: 'no-cors'
+
+        if (form.elements['mobile_number'].value) return
+
+        const name = form.elements['Name'].value.trim()
+        const email = form.elements['Email'].value.trim()
+        const message = form.elements['Message'].value.trim()
+
+        if (!name || !email || !message) {
+          msg.innerHTML = "Please fill in all fields."
+          msg.style.color = "#ff6b6b"
+          setTimeout(() => { msg.innerHTML = "" }, 5000)
+          return
+        }
+
+        const now = Date.now()
+        if (now - lastSubmitTime < 30000) {
+          msg.innerHTML = "Please wait before sending another message."
+          msg.style.color = "#ff6b6b"
+          setTimeout(() => { msg.innerHTML = "" }, 5000)
+          return
+        }
+
+        submitBtn.disabled = true
+        submitBtn.textContent = "Sending..."
+
+        grecaptcha.ready(() => {
+          grecaptcha.execute('6Le7VCotAAAAAJtIG1YWePLqQAEcbKhhDtfKotcQ', { action: 'contact_form' })
+            .then(token => {
+              const formData = new FormData(form)
+              formData.append('recaptcha_token', token)
+              return fetch(scriptURL, {
+                method: 'POST',
+                body: formData,
+                mode: 'no-cors'
+              })
+            })
+            .then(() => {
+              lastSubmitTime = Date.now()
+              msg.innerHTML = "Message sent successfully. Thank you!"
+              msg.style.color = ""
+              setTimeout(function() {
+                msg.innerHTML = ""
+              }, 5000)
+              form.reset()
+              submitBtn.disabled = false
+              submitBtn.textContent = "Send Message"
+            })
+            .catch(error => {
+              msg.innerHTML = "Unable to send message right now. Please try again."
+              msg.style.color = "#ff6b6b"
+              console.error('Contact form error:', error)
+              submitBtn.disabled = false
+              submitBtn.textContent = "Send Message"
+            })
         })
-          .then(() => {
-            msg.innerHTML = "Message sent successfully. Thank you!"
-            setTimeout(function() {
-              msg.innerHTML = ""
-            }, 5000)
-            form.reset()
-          })
-          .catch(error => {
-            msg.innerHTML = "Unable to send message right now. Please try again."
-            console.error('Contact form error:', error)
-          })
       })
     </script>
 
