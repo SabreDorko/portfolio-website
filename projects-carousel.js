@@ -51,33 +51,14 @@ const projects = [
     ]
   },
   {
-    title: 'Owlbear Extensions',
-    shortDescription:
-      'Using the Owlbear API, I have developed two extensions to manage character sheets for different tabletop RPG systems.',
-    fullDescription:
-      'These Owlbear extensions provide character sheet managers for two niche TTRPGs. Being built on the Owlbear API allows players to access and edit their character sheets without needing to toggle between multiple apps or browser tabs.',
-    tech: ['HTML', 'Owlbear API', 'Vite', 'JavaScript'],
-    links: [
-      { label: 'Will of The Cursed Extension', url: 'https://github.com/SabreDorko/JJK-WoCS-Owlbear-Sheets' },
-      { label: 'Kids on Bikes Extension', url: 'https://github.com/SabreDorko/KoB-Character-Sheets-Owlbear-Extension' }
-    ],
-    thumbnail: 'images/project-owlbear',
-    media: [
-      {
-        type: 'image',
-        src: 'images/project-owlbear',
-        alt: 'Extensions enabled in Owlbear'
-      },
-    ]
-  },
-  {
     title: 'Patchy',
     shortDescription:
-      'A bug triage companion for indie developers that pools reports from GitHub, itch.io, and Discord into one sorted dashboard.',
+      'Bug triage that doesn\'t get in your way. Patchy collects, categorizes, and prioritizes player-reported bugs so indie devs can focus on fixing, not filtering.',
     fullDescription:
-      'Patchy is a bug triage tool built for indie developers and small studios. It pools reports from wherever they come in — GitHub Issues, itch.io, Discord, direct developer notes — and processes them in one place. Every incoming report gets scored algorithmically by category, severity, and uniqueness, then routed accordingly so your inbox isn\'t the triage system.',
-    tech: ['Python', 'Discord API', 'NLP'],
+      'Patchy is a bug triage platform built for indie game developers and small studios. It collects reports from Discord, webhooks, and direct submissions, then auto-categorizes them with severity scoring, duplicate detection, and spam filtering. Each report gets a confidence score that you can review, approve, or override from a triage queue. A dashboard with analytics, platform and category filtering, and release tracking keeps everything organized in one place.',
+    tech: ['Python', 'Discord API', 'NLP', 'Webhooks'],
     links: [
+      { label: 'Visit Site', url: 'https://patchy.report/' },
       { label: 'Read the Post', url: 'blog.html?slug=bug-report-compilation-triage' }
     ],
     thumbnail: 'images/patchy-header',
@@ -86,6 +67,26 @@ const projects = [
         type: 'image',
         src: 'images/patchy-header',
         alt: 'Patchy — Bug triage for indie developers'
+      },
+      {
+        type: 'image',
+        src: 'images/patchy-projects',
+        alt: 'Projects overview with top issues and severity badges'
+      },
+      {
+        type: 'image',
+        src: 'images/patchy-bugs',
+        alt: 'Bug list with category, severity, and platform filters'
+      },
+      {
+        type: 'image',
+        src: 'images/patchy-triage',
+        alt: 'Report triage view with confidence scores and review queue'
+      },
+      {
+        type: 'image',
+        src: 'images/patchy-analytics',
+        alt: 'Analytics dashboard with severity and category breakdowns'
       },
     ]
   },
@@ -103,6 +104,26 @@ const projects = [
         type: 'image',
         src: 'images/project-portfolio',
         alt: 'Portfolio preview'
+      },
+    ]
+  },
+  {
+    title: 'Owlbear Extensions',
+    shortDescription:
+      'Using the Owlbear API, I have developed two extensions to manage character sheets for different tabletop RPG systems.',
+    fullDescription:
+      'These Owlbear extensions provide character sheet managers for two niche TTRPGs. Being built on the Owlbear API allows players to access and edit their character sheets without needing to toggle between multiple apps or browser tabs.',
+    tech: ['HTML', 'Owlbear API', 'Vite', 'JavaScript'],
+    links: [
+      { label: 'Will of The Cursed Extension', url: 'https://github.com/SabreDorko/JJK-WoCS-Owlbear-Sheets' },
+      { label: 'Kids on Bikes Extension', url: 'https://github.com/SabreDorko/KoB-Character-Sheets-Owlbear-Extension' }
+    ],
+    thumbnail: 'images/project-owlbear',
+    media: [
+      {
+        type: 'image',
+        src: 'images/project-owlbear',
+        alt: 'Extensions enabled in Owlbear'
       },
     ]
   }
